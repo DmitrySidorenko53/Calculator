@@ -3,15 +3,15 @@ package by.epam.jwd.sidorenko.function;
 import by.epam.jwd.sidorenko.util.constant.Constant;
 
 public class Function {
-    private static String[] tokens;
-    private static int position;
+    private String[] tokens;
+    private int position;
 
     public Function(String function) {
         this.tokens = function.split(Constant.SEPARATOR);
         this.position = 0;
     }
 
-    public static double calcValueInBrackets() {
+    public double calcValueInBrackets() {
         String token = tokens[position];
         double result;
         if (token.equals(Constant.OPEN_BRACKET)) {
@@ -36,7 +36,7 @@ public class Function {
         return Double.parseDouble(token);
     }
 
-    public static double multiplyOrDivide() {
+    public double multiplyOrDivide() {
         double first = calcValueInBrackets();
         while (position < tokens.length) {
             String operator = tokens[position];
@@ -55,7 +55,7 @@ public class Function {
         return first;
     }
 
-    public static double plusOrMinus() {
+    public double plusOrMinus() {
         double first = multiplyOrDivide();
         while (position < tokens.length) {
             String operator = tokens[position];
