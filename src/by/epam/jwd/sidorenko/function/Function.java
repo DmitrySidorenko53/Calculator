@@ -74,4 +74,3 @@ public class Function {
         return first;
     }
 }
-
